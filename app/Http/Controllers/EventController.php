@@ -4,20 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Event;
+
 class EventController extends Controller
 {
-    public function show()
+    public function show($slug)
     {
-        return view('event-detail');
+        $event = Event::with('category')->where('slug', $slug)->firstOrFail();
+        return view('event-detail', compact('event'));
     }
 
-    public function checkout()
+    public function checkout($id)
     {
-        return view('checkout');
+        $event = Event::findOrFail($id);
+        return view('checkout', compact('event'));
     }
 
-    public function ticket()
+    public function ticket($id)
     {
-        return view('ticket');
+        $event = Event::findOrFail($id);
+        return view('ticket', compact('event'));
     }
 }

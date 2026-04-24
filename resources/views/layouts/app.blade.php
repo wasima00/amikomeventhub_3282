@@ -29,7 +29,8 @@
             <div
                 class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white font-bold text-xl">
                 AH</div>
-            <span class="text-xl font-bold tracking-tight">AmikomEventHub</span>
+            <a href="{{ route('home') }}" class="text-xl font-bold tracking-tight">AmikomEventHub</a>
+
         </div>
         <div class="hidden md:flex gap-8 font-medium">
             <a href="#" class="text-indigo-600">Jelajahi</a>
