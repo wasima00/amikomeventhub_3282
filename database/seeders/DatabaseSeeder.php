@@ -43,9 +43,8 @@ public function run(): void
     // 3. Insert Sampel Events
     // Event 1 (Entertainment)
     \App\Models\Event::updateOrCreate(
-        ['slug' => 'jazz-night-2025'],
+        ['title' => 'Jazz Night 2025'],
         [
-            'title' => 'Jazz Night 2025',
             'category_id' => $musik->id,
             'description' => 'Nikmati malam yang indah dengan alunan musik jazz yang merdu.',
             'date' => '2026-05-10 19:00:00',
@@ -58,9 +57,8 @@ public function run(): void
 
     // Event 2 (Seminar IT)
     \App\Models\Event::updateOrCreate(
-        ['slug' => 'hackaton-unleash-your-inner-developer'],
+        ['title' => 'Hackaton - Unleash Your Inner Developer'],
         [
-            'title' => 'Hackaton - Unleash Your Inner Developer',
             'category_id' => $catSeminar->id,
             'description' => 'Ayo asah skill coding kamu dan ciptakan solusi inovatif untuk tantangan masa depan!',
             'date' => '2026-05-05 10:00:00',
@@ -73,9 +71,8 @@ public function run(): void
 
     // Event 3 (Seminar IT)
     \App\Models\Event::updateOrCreate(
-        ['slug' => 'ai-future-tech-summit-2026'],
+        ['title' => 'AI & FUTURE TECH SUMMIT 2026'],
         [
-            'title' => 'AI & FUTURE TECH SUMMIT 2026',
             'category_id' => $catSeminar->id,
             'description' => 'Jelajahi tren terkini dalam kecerdasan buatan dan teknologi masa depan bersama para ahli di bidangnya.',
             'date' => '2026-05-01 13:00:00',
@@ -88,7 +85,7 @@ public function run(): void
 
     // Event 4 (Workshop)
     \App\Models\Event::firstOrCreate(
-        ['title' => 'UI/UX Masterclass', 'slug' => 'ui-ux-masterclass'],
+        ['title' => 'UI/UX Masterclass'],
         [
             'category_id' => $catWorkshop->id,
             'description' => 'Pelajari prinsip desain UI/UX modern dan cara membuat prototype.',
@@ -102,7 +99,7 @@ public function run(): void
 
     // Event 5 (Competition)
     \App\Models\Event::firstOrCreate(
-        ['title' => 'E-Sport U-Champ', 'slug' => 'e-sport-u-champ'],
+        ['title' => 'E-Sport U-Champ'],
         [
             'category_id' => $catWorkshop->id,
             'description' => 'Turnamen Mobile Legends antar mahasiswa',
@@ -116,7 +113,7 @@ public function run(): void
 
     // Event 6 (Workshop)
     \App\Models\Event::firstOrCreate(
-        ['title' => 'Web Development Bootcamp', 'slug' => 'web-development-bootcamp'],
+        ['title' => 'Web Development Bootcamp'],
         [
             'category_id' => $catWorkshop->id,
             'description' => 'Belajar Full-stack development dari nol menggunakan Laravel dan Livewire.',

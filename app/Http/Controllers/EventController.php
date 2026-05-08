@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Models\Event;
 
 class EventController extends Controller
 {
-    public function show($slug)
+    public function show($id)
     {
-        $event = Event::with('category')->where('slug', $slug)->firstOrFail();
+        $event = Event::with('category')->findOrFail($id);
         return view('event-detail', compact('event'));
     }
 

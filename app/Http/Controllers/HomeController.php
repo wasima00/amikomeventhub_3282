@@ -14,5 +14,6 @@ class HomeController extends Controller
         $categories = Category::all();
         $events = Event::with('category')->latest()->take(3)->get();
         return view('welcome', compact('categories', 'events'));
+
     }
 }

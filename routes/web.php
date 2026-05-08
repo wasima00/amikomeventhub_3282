@@ -4,23 +4,21 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\EventController as AdminEventController;
+use App\Http\Controllers\Admin\EventController as EventAdminController;
 use App\Http\Controllers\Admin\CategoryController;
 
 // Rute User Area
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/event/{slug}', [EventController::class, 'show'])->name('events.show');
+Route::get('/event/{id}', [EventController::class, 'show'])->name('events.show');
 Route::get('/checkout/{id}', [EventController::class, 'checkout'])->name('checkout');
 Route::get('/my-ticket/{id}', [EventController::class, 'ticket'])->name('ticket');
 
 // Rute Admin Area
-Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-    Route::get('/events', [AdminEventController::class, 'indexAdmin'])->name('events.index');
+    Route::resource('events', EventAdminController::class);
     Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
-    Route::get('/transactions', function() {
-        return view('admin.transactions');
-    })->name('transactions.index');
+    Route::get('/transactions', [\App\Http\Controllers\Admin\TransactionController::class, 'index'])->name('transactions.index');
 });
 
 // Route::get('/profil', function () {
