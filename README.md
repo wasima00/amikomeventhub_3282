@@ -39,6 +39,15 @@
 |             | Detail Event       | [Lihat Detail Event](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/event-detail/jazz-night-2024) |
 |             | Checkout Tiket     | [Lihat Checkout](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/checkout/jazz-night-2024)         |
 |             | Kategori           | [Lihat Kategori](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin/categories)                 |
+| **TUGAS 3** | Dashboard Admin    | [Lihat Dashboard](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin)                           |
+| Membuat     | 
+| CRUD        | Manajemen Event    | [Lihat Event](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin/events)                        |
+|             | Laporan Transaksi  | [Lihat Transaksi](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin/transactions)              |
+|             | Beranda / Welcome  | [Lihat Beranda](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/)                                  |
+|             | Detail Event       | [Lihat Detail Event](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/event-detail/jazz-night-2024) |
+|             | Checkout Tiket     | [Lihat Checkout](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/checkout/jazz-night-2024)         |
+|             | Kategori           | [Lihat Kategori](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin/categories)                 |
+
 
 
 ---
