@@ -124,5 +124,26 @@ public function run(): void
             'poster_path' => 'posters/event-6.png',
         ]
     );
+
+    // 4. Insert Sampel Partner
+    \App\Models\Partner::firstOrCreate(
+        ['name' => 'Universitas Amikom Yogyakarta'],
+        ['logo_url' => 'partners/amikom.png']
+    );
+
+    \App\Models\Partner::firstOrCreate(
+        ['name' => 'GDSC Amikom'],
+        ['logo_url' => 'partners/gdsc.png']
+    );
+
+    \App\Models\Partner::firstOrCreate(
+        ['name' => 'Dicoding Indonesia'],
+        ['logo_url' => 'partners/dicoding.png']
+    );
+
+    \App\Models\Partner::firstOrCreate(
+        ['name' => 'Gojek'],
+        ['logo_url' => 'partners/gojek.png']
+    );
 }
 }
