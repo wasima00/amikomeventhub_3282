@@ -52,6 +52,27 @@
         </div>
     </section>
 
+    <!-- Partner Showcase Section (Soal 4) -->
+    <section class="bg-white border-y border-slate-100/80 py-10 my-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-center text-[10px] font-black uppercase tracking-widest text-slate-400 mb-8">Trusted by official organizations & partners</p>
+            <div class="flex flex-wrap items-center justify-center gap-12 md:gap-20">
+                @forelse($partners as $partner)
+                    <div class="group flex flex-col items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-300">
+                        <div class="h-12 w-32 flex items-center justify-center">
+                            <img src="{{ asset('storage/' . $partner->logo_url) }}" alt="{{ $partner->name }}" 
+                                class="max-h-full max-w-full object-contain transition-all duration-300"
+                                onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name={{ urlencode($partner->name) }}&background=f1f5f9&color=6366f1&size=128';">
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-400 group-hover:text-indigo-600 mt-2 tracking-tight transition-colors">{{ $partner->name }}</span>
+                    </div>
+                @empty
+                    <p class="text-slate-400 text-sm font-medium italic">Belum ada partner resmi yang terhubung.</p>
+                @endforelse
+            </div>
+        </div>
+    </section>
+
     <!-- Events Grid -->
     <section id="events" class="max-w-7xl mx-auto px-6 py-20">
         <div class="flex justify-between items-end mb-12">
@@ -59,8 +80,11 @@
                 <h2 class="text-3xl font-extrabold mb-2">Event Terdekat</h2>
                 <p class="text-slate-500 font-medium">Jangan sampai ketinggalan acara seru minggu ini!</p>
             </div>
-            <div class="flex gap-2">
-                <button class="p-3 border rounded-xl hover:bg-white hover:shadow-md transition">Semua Kategori</button>
+            <div class="flex flex-wrap gap-2 justify-end max-w-xl">
+                <button class="px-4 py-2 bg-indigo-600 text-white rounded-xl text-xs font-bold shadow-md shadow-indigo-100 transition">Semua Kategori</button>
+                @foreach($categories as $category)
+                    <button class="px-4 py-2 border border-slate-100 bg-white hover:bg-slate-50 text-slate-600 hover:text-indigo-600 rounded-xl text-xs font-bold transition">{{ $category->name }}</button>
+                @endforeach
             </div>
         </div>
 

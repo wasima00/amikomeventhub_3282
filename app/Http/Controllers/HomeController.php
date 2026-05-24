@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Category;
 use App\Models\Event;
+use App\Models\Partner;
 
 class HomeController extends Controller
 {
@@ -13,7 +14,7 @@ class HomeController extends Controller
     {
         $categories = Category::all();
         $events = Event::with('category')->latest()->take(3)->get();
-        return view('welcome', compact('categories', 'events'));
-
+        $partners = Partner::all();
+        return view('welcome', compact('categories', 'events', 'partners'));
     }
 }

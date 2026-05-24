@@ -15,8 +15,15 @@ use Illuminate\Support\Facades\Storage;
 
 class EventController extends Controller
 {
-   public function index() {
-        $events = Event::with('category')->latest()->get();
+   public function index(Request $request) {
+        $query = Event::with('category');
+
+        // Filter berdasarkan pencarian
+        if ($request->has('search') && $request->search != '') {
+            $query->where('title', 'LIKE', "%{$request->search}%");
+        }
+
+        $events = $query->latest()->get();
         return view('admin.events.index', compact('events'));
     }
 

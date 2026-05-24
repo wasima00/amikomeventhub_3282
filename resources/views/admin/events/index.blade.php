@@ -12,6 +12,29 @@
     </a>
 </header>
 
+ <!-- Header & Search Controls -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+        <!-- Search Input (Soal 3) -->
+        <form action="{{ route('admin.events.index') }}" method="GET" class="w-full md:w-96 flex items-center gap-2">
+            <div class="relative w-full">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </span>
+                <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari event..." 
+                    class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-2xl shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-sm font-semibold transition-all">
+            </div>
+            <button type="submit" class="px-5 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-2xl shadow-md shadow-indigo-100 hover:shadow-lg transition text-sm">
+                Cari
+            </button>
+            @if(request('search'))
+                <a href="{{ route('admin.events.index') }}" class="px-4 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-2xl transition text-sm">
+                    Reset
+                </a>
+            @endif  
+        </form>
+    </div>
 
 <div class="bg-white rounded-[2.5rem] border border-slate-100 shadow-sm overflow-hidden">
     <div class="overflow-x-auto">
