@@ -37,11 +37,27 @@
             <a href="#" class="hover:text-indigo-600 transition">Kategori</a>
             <a href="#" class="hover:text-indigo-600 transition">Tentang Kami</a>
         </div>
-        <!-- <div class="flex gap-3">
-            <button class="px-5 py-2.5 rounded-xl font-semibold hover:bg-slate-200 transition">Login</button>
-            <button
-                class="px-5 py-2.5 bg-indigo-600 text-white rounded-xl font-semibold shadow-lg shadow-indigo-200 hover:bg-indigo-700 transition">Daftar</button>
-        </div> -->
+        <div class="flex items-center gap-3">
+            @auth
+                {{-- User sudah login --}}
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center font-bold text-sm uppercase">
+                        {{ substr(Auth::user()->name, 0, 1) }}
+                    </div>
+                    <span class="hidden md:inline font-semibold text-sm text-slate-700">{{ Auth::user()->name }}</span>
+                    <form action="{{ route('admin.logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="px-4 py-2 rounded-xl font-semibold text-sm text-red-500 hover:bg-red-50 transition">
+                            Logout
+                        </button>
+                    </form>
+                </div>
+            @else
+                {{-- User belum login --}}
+                <a href="{{ route('admin.login') }}" class="px-5 py-2.5 rounded-xl font-semibold hover:bg-slate-100 transition text-sm">Login</a>
+                <a href="{{ route('admin.register') }}" class="px-5 py-2.5 bg-indigo-600 text-white rounded-xl font-semibold shadow-lg shadow-indigo-200 hover:bg-indigo-700 transition text-sm">Daftar</a>
+            @endauth
+        </div>
     </nav>
 
     @yield('content')

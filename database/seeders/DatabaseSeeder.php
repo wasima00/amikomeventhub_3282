@@ -11,8 +11,8 @@ public function run(): void
 {
     // 1. Akun Admin Utama
     \App\Models\User::firstOrCreate(
-        ['email' => 'admin@amikom.ac.id'],
-        [
+        ['email' => 'admin@amikom.ac.id',
+        
             'name' => 'Admin Amikom',
             'password' => bcrypt('password'),
             'role' => 'admin',
