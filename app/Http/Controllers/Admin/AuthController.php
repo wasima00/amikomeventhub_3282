@@ -27,14 +27,13 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            // Cek role, jika admin arahkan ke dashboard
+            // Cek role, arahkan sesuai hak akses
             if (Auth::user()->role === 'admin') {
                 return redirect()->route('admin.dashboard');
             }
 
-            // Jika bukan admin, logout dan kembalikan error
-            Auth::logout();
-            return back()->with('error', 'Anda tidak memiliki hak akses admin.')->withInput();
+            // User biasa diarahkan ke halaman utama
+            return redirect()->route('home');
         }
 
         return back()->with('error', 'Email atau password salah.')->withInput();
@@ -59,12 +58,12 @@ class AuthController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => 'admin',
+            'role' => 'user',
         ]);
 
         Auth::login($user);
 
-        return redirect()->route('admin.dashboard')->with('success', 'Registrasi berhasil! Selamat datang.');
+        return redirect()->route('home')->with('success', 'Registrasi berhasil! Selamat datang.');
     }
 
     // 5. Memproses Logout
