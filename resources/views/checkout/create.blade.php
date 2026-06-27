@@ -69,7 +69,7 @@
         <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm">
             <h3 class="text-xl font-bold mb-6 italic text-indigo-600 underline underline-offset-8">📦 Data Pemesan
                 (Tanpa Login)</h3>
-            <form id="checkout-form" class="space-y-6">
+            <form action="{{ route('checkout.store', $event->id) }}" method="POST" class="space-y-6">
                 @csrf
                 <div>
                     <label class="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wide">Nama
@@ -111,112 +111,5 @@
 
     </div>
 </main>
-
-{{-- Loading Overlay --}}
-<div id="loading-overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center">
-    <div class="bg-white rounded-3xl p-10 text-center shadow-2xl max-w-sm mx-4">
-        <div class="w-16 h-16 border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin mx-auto mb-6"></div>
-        <h3 class="text-xl font-bold mb-2">Memproses Pembayaran...</h3>
-        <p class="text-slate-500 text-sm">Mohon tunggu, jangan tutup halaman ini.</p>
-    </div>
-</div>
-
-{{-- Success Modal --}}
-<div id="success-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center">
-    <div class="bg-white rounded-3xl p-10 text-center shadow-2xl max-w-md mx-4 transform transition-all">
-        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-            </svg>
-        </div>
-        <h3 class="text-2xl font-black mb-2">Transaksi Berhasil Dibuat!</h3>
-        <p class="text-slate-500 mb-2">Order ID: <span id="success-order-id" class="font-mono font-bold text-indigo-600"></span></p>
-        <p class="text-slate-400 text-sm mb-8">Pembayaran akan diproses melalui Midtrans setelah integrasi selesai.</p>
-        <a href="{{ route('home') }}"
-            class="inline-block px-8 py-4 bg-indigo-600 text-white rounded-2xl font-bold shadow-lg shadow-indigo-200 hover:bg-indigo-700 transition">
-            Kembali ke Home
-        </a>
-    </div>
-</div>
 @endsection
 
-@push('scripts')
-{{-- [Phase 2] Midtrans Snap.js CDN akan ditambahkan di sini --}}
-{{-- <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('midtrans.client_key') }}"></script> --}}
-
-<script>
-    const checkoutForm = document.getElementById('checkout-form');
-    const payButton = document.getElementById('pay-button');
-    const loadingOverlay = document.getElementById('loading-overlay');
-    const successModal = document.getElementById('success-modal');
-
-    checkoutForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-
-        // Validasi form
-        const name = document.getElementById('customer_name').value.trim();
-        const email = document.getElementById('customer_email').value.trim();
-        const phone = document.getElementById('customer_phone').value.trim();
-
-        if (!name || !email || !phone) {
-            alert('Mohon lengkapi semua data yang diperlukan.');
-            return;
-        }
-
-        // Show loading
-        payButton.disabled = true;
-        payButton.innerHTML = '<div class="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div> Memproses...';
-        loadingOverlay.classList.remove('hidden');
-        loadingOverlay.classList.add('flex');
-
-        try {
-            const response = await fetch("{{ route('checkout.store', $event->id) }}", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
-                    'Accept': 'application/json',
-                },
-                body: JSON.stringify({
-                    customer_name: name,
-                    customer_email: email,
-                    customer_phone: phone,
-                }),
-            });
-
-            const data = await response.json();
-
-            if (!response.ok) {
-                // Validation errors
-                if (data.errors) {
-                    let errorMsg = Object.values(data.errors).flat().join('\n');
-                    alert(errorMsg);
-                } else {
-                    alert(data.message || 'Terjadi kesalahan.');
-                }
-                return;
-            }
-
-            // [Phase 2] Di sini akan dipanggil window.snap.pay(data.snap_token, {...})
-            // Untuk saat ini, tampilkan success modal
-            if (data.success) {
-                loadingOverlay.classList.add('hidden');
-                loadingOverlay.classList.remove('flex');
-
-                document.getElementById('success-order-id').textContent = data.order_id;
-                successModal.classList.remove('hidden');
-                successModal.classList.add('flex');
-            }
-
-        } catch (error) {
-            console.error('Checkout error:', error);
-            alert('Terjadi kesalahan saat memproses pembayaran. Silakan coba lagi.');
-        } finally {
-            payButton.disabled = false;
-            payButton.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg> Lanjut Pembayaran';
-            loadingOverlay.classList.add('hidden');
-            loadingOverlay.classList.remove('flex');
-        }
-    });
-</script>
-@endpush

@@ -20,6 +20,6 @@ class AdminMiddleware
             return $next($request);
         }
 
-        return redirect()->route('admin.login')->with('error', 'Anda tidak memiliki hak akses ke halaman ini.');
+        return redirect()->route('home')->with('error', 'Anda tidak memiliki hak akses ke halaman ini.');
     }
 }

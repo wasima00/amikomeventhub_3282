@@ -18,8 +18,8 @@ Route::get('/checkout/{event}', [CheckoutController::class, 'create'])->name('ch
 Route::post('/checkout/{event}', [CheckoutController::class, 'store'])->name('checkout.store');
 Route::get('/my-ticket/{id}', [EventController::class, 'ticket'])->name('ticket');
 
-// [Phase 2] Route Payment Success — akan diaktifkan setelah integrasi Midtrans
-// Route::get('/payment/success/{order_id}', [PaymentController::class, 'success'])->name('payment.success');
+Route::get('/payment/{order_id}', [CheckoutController::class, 'payment'])->name('checkout.payment');
+Route::get('/success/{order_id}', [CheckoutController::class, 'success'])->name('checkout.success');
 
 // Rute Admin Area
 Route::prefix('admin')->name('admin.')->group(function () {

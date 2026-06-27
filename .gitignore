@@ -23,3 +23,32 @@ _ide_helper.php
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# Markdown / documentation files
+*.md
+
+# Compressed archives
+*.zip
+*.tar.gz
+*.rar
+
+# OS generated files
+Desktop.ini
+ehthumbs.db
+
+# Editor / IDE
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# Composer
+composer.phar
+
+# npm debug
+npm-debug.log
+yarn-error.log
+
+# Gemini / AI
+.gemini/

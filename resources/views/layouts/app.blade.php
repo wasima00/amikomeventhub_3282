@@ -61,6 +61,22 @@
         </div>
     </nav>
 
+    <!-- Flash Messages -->
+    <div class="max-w-7xl mx-auto px-4 mt-8 w-full z-10 relative">
+        @if(session('error'))
+            <div class="bg-red-50 border border-red-200 text-red-600 px-6 py-4 rounded-xl shadow-sm mb-4 flex items-center gap-3 font-medium">
+                <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                {{ session('error') }}
+            </div>
+        @endif
+        @if(session('success'))
+            <div class="bg-emerald-50 border border-emerald-200 text-emerald-600 px-6 py-4 rounded-xl shadow-sm mb-4 flex items-center gap-3 font-medium">
+                <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                {{ session('success') }}
+            </div>
+        @endif
+    </div>
+
     @yield('content')
 
     <!-- Footer -->
