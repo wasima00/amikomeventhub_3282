@@ -19,7 +19,7 @@
 - **Nama:** Wasima Juhaina
 - **NIM:** 24.12.3282
 - **Prodi:** Digital Business
-- **Repository:** amikomeventhub_3232
+- **Repository:** amikomeventhub_3282
 
 ---
 
@@ -39,23 +39,18 @@
 |             | Detail Event       | [Lihat Detail Event](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/event-detail/jazz-night-2024) |
 |             | Checkout Tiket     | [Lihat Checkout](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/checkout/jazz-night-2024)         |
 |             | Kategori           | [Lihat Kategori](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin/categories)                 |
-| **TUGAS 3** | Dashboard Admin    | [Lihat Dashboard](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin)                           |
-| Membuat     | 
-| CRUD        | Manajemen Event    | [Lihat Event](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin/events)                        |
+| **TUGAS 3** <br> (Membuat CRUD) | Dashboard Admin    | [Lihat Dashboard](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin)                           |
+|             | Manajemen Event    | [Lihat Event](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin/events)                        |
 |             | Laporan Transaksi  | [Lihat Transaksi](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin/transactions)              |
 |             | Beranda / Welcome  | [Lihat Beranda](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/)                                  |
 |             | Detail Event       | [Lihat Detail Event](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/event-detail/jazz-night-2024) |
 |             | Checkout Tiket     | [Lihat Checkout](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/checkout/jazz-night-2024)         |
 |             | Kategori           | [Lihat Kategori](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin/categories)                 |
-| **UTS**     | Dashboard Admin        | [Lihat Dashboard](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin)                       |
-| Membuat     | 
-| partner     | Manajemen Event    | [Lihat Event](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin/events)                        |
+| **UTS** <br> (Membuat Partner) | Dashboard Admin    | [Lihat Dashboard](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin)                           |
+|             | Manajemen Event    | [Lihat Event](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin/events)                        |
 |             | Partner            | [Lihat Partner](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin/partners)                    |
 |             | Beranda / Welcome  | [Lihat Beranda](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/)                                  |
 |             | Detail Event       | [Lihat Detail Event](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/event-detail/jazz-night-2024) |
 |             | Kategori           | [Lihat Kategori](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin/categories)                 |
-
-
-
 
 ---
