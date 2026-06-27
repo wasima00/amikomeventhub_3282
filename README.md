@@ -52,5 +52,22 @@
 |             | Beranda / Welcome  | [Lihat Beranda](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/)                                  |
 |             | Detail Event       | [Lihat Detail Event](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/event-detail/jazz-night-2024) |
 |             | Kategori           | [Lihat Kategori](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin/categories)                 |
+| **Tugas**   | Dashboard Admin        | [Lihat Dashboard](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin)                       |
+|      8      | 
+|             | Manajemen Event    | [Lihat Event](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin/events)                        |
+|             | Partner            | [Lihat Partner](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin/partners)                    |
+|             | Beranda / Welcome  | [Lihat Beranda](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/)                                  |
+|             | Detail Event       | [Lihat Detail Event](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/event-detail/jazz-night-2024) |
+|             | Kategori           | [Lihat Kategori](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin/categories)                 |
+|             | Login              | [Lihat Login](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin/login)                         |
+| **Tugas**   | Dashboard Admin        | [Lihat Dashboard](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin)                       |
+|     10      | 
+|             | Manajemen Event    | [Lihat Event](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin/events)                        |
+|             | Partner            | [Lihat Partner](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin/partners)                    |
+|             | Beranda / Welcome  | [Lihat Beranda](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/)                                  |
+|             | Detail Event       | [Lihat Detail Event](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/event-detail/jazz-night-2024) |
+|             | Kategori           | [Lihat Kategori](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin/categories)                 |
+|             | Login              | [Lihat Login](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin/login)                         |
+|             | Laporan Transaksi  | [Lihat Transaksi](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin/transactions)              |
 
 ---
