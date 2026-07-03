@@ -69,5 +69,10 @@
 |             | Kategori           | [Lihat Kategori](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin/categories)                 |
 |             | Login              | [Lihat Login](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin/login)                         |
 |             | Laporan Transaksi  | [Lihat Transaksi](https://amikomeventhub-3282-main-xpoxpv.free.laravel.cloud/admin/transactions)              |
+| **Tugas**   | Link Deploy        | [Lihat Dashboard](http://amikomeventhub-3282.xo.je/?i=1)                       |
+|     12      | 
+
+
+---
 
 ---
