@@ -19,12 +19,20 @@ return Application::configure(basePath: dirname(__DIR__))
             '/midtrans/callback', // Mengecualikan route webhook Midtrans dari blokir CSRF
         ]);
 
-        // Redirect user yang sudah login ketika mengakses halaman guest (login/register)
-        $middleware->redirectUsersTo(fn () => auth()->user()->role === 'admin' ? '/admin/dashboard' : '/');
+    
+
+    // Redirect user yang sudah login ketika mengakses halaman guest (login/register)
+    $middleware->redirectUsersTo(fn () => auth()->user()->role === 'admin' ? '/admin/dashboard' : '/');
 
         // Redirect user yang belum login ketika mengakses halaman yang butuh auth
-        $middleware->redirectGuestsTo('/admin/login');
+    $middleware->redirectGuestsTo('/admin/login');
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
     })->create();
+
+     withMiddleware(function (Middleware $middleware) {
+     $middleware->validateCsrfTokens(except: [
+         '/midtrans/callback', // Mengecualikan route webhook Midtrans dari blokir CSRF
+     ]);
+});

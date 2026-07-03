@@ -21,6 +21,7 @@ Route::get('/my-ticket/{id}', [EventController::class, 'ticket'])->name('ticket'
 Route::get('/payment/{order_id}', [CheckoutController::class, 'payment'])->name('checkout.payment');
 Route::get('/success/{order_id}', [CheckoutController::class, 'success'])->name('checkout.success');
 
+
 // Rute Admin Area
 Route::prefix('admin')->name('admin.')->group(function () {
 
@@ -42,6 +43,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('partners', PartnerController::class);
         Route::get('transactions', [TransactionController::class, 'index'])->name('transactions.index');
     });
+    Route::post('/midtrans/callback', [\App\Http\Controllers\MidtransWebhookController::class, 'handle']);
 });
 
 
